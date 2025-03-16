@@ -13,11 +13,11 @@
     - SSH access to target machines with sudo privileges.
 
 ## Playbook details
-1. SELinux Play
+1. # SELinux Play
     1. Ensures SELinux is set to enforcing mode.
     2. If changes are made, the system reboots to apply them.
   
-2. Firewall Play
+2. # Firewall Play
   1. Installs firewalld (if not present).
   2. Starts and enables firewalld.
   3. Allows traffic for:
@@ -28,4 +28,5 @@
 
   ## Usage
   1. Run the playbook:
+  
   `` ansible-playbook two_plays.yml``
