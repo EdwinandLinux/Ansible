@@ -16,9 +16,8 @@
 1. SELinux Play
     1. Ensures SELinux is set to enforcing mode.
     2. If changes are made, the system reboots to apply them.
-  
-1. Firewall Play
 
+1. Firewall Play
   1. Installs firewalld (if not present).
   2. Starts and enables firewalld.
   3. Allows traffic for:
