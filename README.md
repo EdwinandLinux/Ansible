@@ -24,7 +24,7 @@ vim ansible.cfg
 ### c - Details of the configuration file
 
 ##### *[defaults]*
-   - Section that sets the default behavior of Ansible when running a **playbook** or **ad-hoc commands**
+   - Section that sets the default behavior of Ansible when running a **playbook** or **ad-hoc commands**.
 
 ##### *inventory= ./inventory.ini* 
  - Tell Ansible to use **inventory.ini** in the current directory as the inventory file.
@@ -35,7 +35,7 @@ vim ansible.cfg
  - This is the **default ssh user** Ansible uses to connect to the remote hosts.
 
  ##### *ask_pass*
-  - This tell Ansible **not to ask for the ssh password**
+  - This tell Ansible **not to ask for the ssh password**.
   - It assumes that you are using **ssh key-based authentification**.
 
 ##### *[privilege_escalation]*
@@ -52,7 +52,7 @@ vim ansible.cfg
 
 ##### *become_ask_pass = false*
  - Tell Ansible **not to prompt for the sudo password** 
- - This will work if the **ansible user** can run sudo **without a password** ( need to add ansible user in the /etc/sudoers with **ALL=(ALL)  NOPASSWD: ALL**)
+ - This will work if the **ansible user** can run sudo **without a password** ( need to add ansible user to the /etc/sudoers with **ALL=(ALL)  NOPASSWD: ALL**).
 
 
 
