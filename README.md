@@ -21,7 +21,7 @@ In Ansible, configuration file is used to defined various settings that control 
 cd ansible
 vim ansible.cfg
 ```
-### c - Details of the configuration file
+### 1-b - Details of the configuration file
 
 ##### *[defaults]*
    - Section that sets the default behavior of Ansible when running a **playbook** or **ad-hoc commands**
