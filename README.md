@@ -3,5 +3,5 @@
 # II - Inventory
 ### What is an **inventory**?
 ```
-An inventory is a file that lists the hosts(servers) that you want ansible to manage.
+An inventory is a file that lists the hosts(servers) that you want Ansible to manage.
 ```
