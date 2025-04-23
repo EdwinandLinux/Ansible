@@ -32,7 +32,7 @@ vim ansible.cfg
  - This file can be in **ini** or **yaml** format.
 
 ##### *remote_user = ansible*
- - This is the ** default ssh user** Ansible uses to connect to the remote hosts.
+ - This is the **default ssh user** Ansible uses to connect to the remote hosts.
 
  ##### *ask_pass*
   - This tell Ansible **not to ask for the ssh password**
