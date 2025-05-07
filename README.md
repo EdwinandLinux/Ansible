@@ -1,11 +1,27 @@
 # I - Ansible Setup on wmware with RHEL
 
-# II - Inventory
-### 1 - What is an **inventory**?
+# II - Inventory in Ansible
+### 1 - What is Ansible?
+```
+Ansible is a free and open source engine that automates remotes system and ensures they meet the desired state. It establishes connection between node using SSH.
+```
+### 2 - What is Control Node?
+```
+Control Node is the machine where Ansible is installed.
+```
+### 3 - What  is Managed Node?
+```
+Managed Node is a host or system that is managed by the Control Node.
+```
+### 4 - What is Playbook?
+```
+Playbook is a Yammel configuration file that uses a human readable language to describe automation jobs.
+```
+### 5 - What is an **inventory**?
 ```
 An inventory is a file that lists the hosts(servers) that you want Ansible to manage.
 ```
-### 2 - Create an inventory
+### 6 - Create an inventory
 ```
 sudo mkdir ansible
 cd ansible
