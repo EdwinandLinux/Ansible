@@ -70,6 +70,29 @@ vim ansible.cfg
  - Tell Ansible **not to prompt for the sudo password** 
  - This will work if the **ansible user** can run sudo **without a password** ( need to add ansible user to the /etc/sudoers with **ALL=(ALL)  NOPASSWD: ALL**).
 
+ # A - Project : Create a Simple File on a Server with Ansible
+
+This project demonstrates how to use Ansible to create a simple file on a remote server.
+
+## Prerequisites
+
+- Ansible installed on your control node.
+- SSH access to the target server(s).
+- Inventory file listing the target hosts.
+
+## Ansible Playbook
+---
+- name: Create a simple file on a serverb
+  hosts: serverb
+  tasks:
+    - name: Create a simple file with content on serverb
+      file:
+        path: /tmp/file-playbook1
+        state: touch
+
+```
+
+
 
 
 
