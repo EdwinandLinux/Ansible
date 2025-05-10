@@ -1,0 +1,7 @@
+---
+- hosts:  serverb
+  tasks:
+   - name: Create a file on serverb
+     file:
+       path: /tmp/file-playbook1
+       state: absent 
