@@ -1,0 +1,17 @@
+---
+- hosts: web
+  become: true
+  name: Install Apache
+  tasks:
+    - name: Install the latest Apache (httpd)
+      yum:
+        name: httpd
+        state: latest
+    - name: Start and enable Apache service
+      systemd:
+        name: httpd
+        state: started
+        enabled: true
+    - name: Add a web page
+      script: welcome.sh
+      

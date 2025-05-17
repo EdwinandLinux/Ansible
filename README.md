@@ -81,19 +81,23 @@ This project demonstrates how to use Ansible to create a simple file on a remote
 - Inventory file listing the target hosts.
 
 ## Ansible Playbook
----
+```
 - name: Create a simple file on a serverb
   hosts: serverb
   tasks:
     - name: Create a simple file with content on serverb
       file:
         path: /tmp/file-playbook1
-        state: touch
-
+       state: touch
 ```
+# B - Project: Apache Installation with Ansible
+This project uses Ansible to automate the installation and configuration of the Apache HTTP server on two server.
 
+🚀 Requirements
+. Ansible installed on your control machine (your laptop or a bastion host)
 
+. SSH access to the target node
 
+. Python installed on the target node
 
-
-
+. A user on the target node with sudo privileges
