@@ -1,0 +1,48 @@
+---
+- name: Play 1 - Install Nginx on webserser
+  hosts: webserver
+  become: true
+  tasks: 
+    - name: install EPEL repository
+      yum:
+      name:  https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+      state: present
+      disable_gpg_check: yes # Be cautions for security purposes
+
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+         name: nginx
+         state: started
+         enabled: yes
+
+- name: Play 2 - Create User and Hard Link on the otherserver
+  hosts: otherserver
+  become: true
+  tasks:
+     
+    - name: Create user Pauly
+      user: Pauly
+      shell: /bin/bash
+      create_home: yes
+
+    - name: Create a file /home/pauly/pauly_file.txt
+      file: 
+       path: /home/pauly/pauly_file.txt
+       state: touch
+       owner: pauly
+       group: pauly
+       mode: 0644
+
+    - name: Create Hard link /home/pauly/pauly_file_hardlnk.txt
+      file:
+        src: /home/pauly/pauly_file.txt
+        dest: /home/pauly/pauly_file_hardlnk.txt
+        state: hard
+
+
+

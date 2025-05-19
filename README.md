@@ -126,3 +126,7 @@ Make sure your `inventory.ini` file looks like this:
 
 [otherserver]
 192.168.1.20
+```
+## To check the syntax of an Ansible playbook
+
+```ansible-playbook <playbook_file.yml> --syntax-check```
