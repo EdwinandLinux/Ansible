@@ -101,3 +101,28 @@ This project uses Ansible to automate the installation and configuration of the 
 . Python installed on the target node
 
 . A user on the target node with sudo privileges
+
+# C - Project: Nginx Installation and User Setup with Hard Link
+
+## 📋 Description
+
+This Ansible project  performs the following actions using **two separate plays**:
+
+1. **Play 1**: Installs **Nginx** on the host group named `webserver`.
+2. **Play 2**: On a different host group named `otherserver`, it:
+   - Creates a Linux user.
+   - Creates a file.
+   - Creates a **hard link** to the file.
+
+---
+
+## 🖥️ Inventory Setup
+
+Make sure your `inventory.ini` file looks like this:
+
+```ini
+[webserver]
+192.168.1.10
+
+[otherserver]
+192.168.1.20
