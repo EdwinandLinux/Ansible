@@ -130,3 +130,35 @@ Make sure your `inventory.ini` file looks like this:
 ## To check the syntax of an Ansible playbook
 
 ```ansible-playbook <playbook_file.yml> --syntax-check```
+
+# D - Project : Ansible Ad Hoc Commands
+
+This project provides a guide on using Ansible ad hoc commands for quick, one-off tasks on remote systems.
+
+## What are Ad Hoc Commands?
+
+Ansible ad hoc commands allow you to execute single tasks on managed nodes without the need for playbooks. They are ideal for tasks you don't perform frequently and provide a quick way to interact with remote systems.
+
+**Key characteristics:**
+
+-   **Single-task execution:** Ad hoc commands execute a single task per command invocation.
+-   **Non-reusable:** Unlike playbooks, ad hoc commands are not stored for future reuse.
+-   **Fast and simple:** They provide a rapid way to execute tasks across multiple hosts.
+
+## Basic Syntax
+
+The basic syntax for an Ansible ad hoc command is:
+
+```bash
+ansible <pattern> -m <module> -a "<module_arguments>"
+# pattern: Defines which hosts to target
+# -m <module>: Specifies the Ansible module to use 
+# -a "<module_arguments>": Provides the arguments for the chosen module, enclosed in double quotes.
+
+# Examples:
+# ansible all -m ping
+# ansible webservers -m command -a "uptime"
+# ansible appservers -m yum -a "name=http state=present"
+
+
+```
