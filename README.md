@@ -188,7 +188,7 @@ This Ansible project contains two plays:
 - `sudo` privileges on managed hosts
 - Inventory configured properly
 
-## 🧪 Example Inventory
+## 🧪 Inventory
 
 ```
 [webserver]
