@@ -131,7 +131,7 @@ Make sure your `inventory.ini` file looks like this:
 
 ```ansible-playbook <playbook_file.yml> --syntax-check```
 
-# D - Project : Ansible Ad Hoc Commands
+# D - Project: Ansible Ad Hoc Commands
 
 This project provides a guide on using Ansible ad hoc commands for quick, one-off tasks on remote systems.
 
@@ -159,6 +159,44 @@ ansible <pattern> -m <module> -a "<module_arguments>"
 # ansible all -m ping
 # ansible webservers -m command -a "uptime"
 # ansible appservers -m yum -a "name=http state=present"
+```
 
+# E - Project: Ansible Automation: Nginx Uninstallation & User Removal
+
+This Ansible project contains two plays:
+
+1. **Uninstall `nginx`** on a specific host if it is already installed.
+2. **Delete user `pauly`**, including their home directory, if the user exists.
+
+
+## 📜 playbook.yml Overview
+
+### 🔹 Play 1: Uninstall Nginx (if installed)
+- Target: A specific host (define in inventory as `webserver`)
+- Checks if `nginx` is installed using `rpm -q`.
+- If installed, it uninstalls using the `yum` module.
+
+### 🔹 Play 2: Remove User `pauly`
+- Target: `otherserver`
+- Checks if user `pauly` exists using the `getent` module.
+- If the user exists, it deletes the user and their home directory.
+
+## ⚙️ Prerequisites
+
+- Ansible installed on the control node
+- SSH access to target hosts
+- `sudo` privileges on managed hosts
+- Inventory configured properly
+
+## 🧪 Example Inventory
 
 ```
+[webserver]
+nodeA
+
+[otherserver]
+serverb
+```
+
+
+
