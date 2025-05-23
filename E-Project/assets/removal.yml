@@ -1,0 +1,37 @@
+---
+- name: Uninstall Nginx if installed on webserver
+  hosts: webserver
+  become: true
+  tasks:
+    - name: Check if Nginx is installed
+      shell: rpm -q nginx
+      # Save the output to a variable
+      register: nginx_check
+      ignore_errors: yes
+
+    - name: Uninstall Nginx
+      yum:
+       name: nginx
+       state: absent
+      when: nginx_check.rc == 0
+
+
+
+
+- name: Delete user pauly if exists along with home directory
+  hosts: otherserver
+  become: true
+  tasks:
+    - name: Check if user pauly exists
+      command: id pauly
+      register: pauly_exists
+      ignore_errors: true
+
+    - name: Delete user pauly and their home directory
+      user:
+       name: pauly
+       state: absent
+       remove: yes
+      when: pauly_exists is defined and pauly_exists is not failed
+
+
