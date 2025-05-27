@@ -209,14 +209,14 @@ This Ansible playbook uses a **handler** to check if a user exists on the system
 
 ## 📁 Project Structure
 
+```
+
 ├── handlers/
-│ └── main.yml # Handler that deletes the user
+│   └── main.yml          # Handler that deletes the user
 ├── tasks/
-│ └── main.yml # Main tasks to check user and notify handler
+│   └── main.yml          # Main tasks to check user and notify handler
 ├── vars/
-│ └── main.yml # Variables (username)
-├── delete_user.yml # Playbook to run the role
-
-
-
+│   └── main.yml          # Variables (username)
+├── delete_user.yml       # Playbook to run the role
+```
 
