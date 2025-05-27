@@ -210,7 +210,6 @@ This Ansible playbook uses a **handler** to check if a user exists on the system
 ## 📁 Project Structure
 
 ```
-
 ├── handlers/
 │   └── main.yml          # Handler that deletes the user
 ├── tasks/
