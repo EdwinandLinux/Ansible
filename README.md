@@ -189,7 +189,6 @@ This Ansible project contains two plays:
 - Inventory configured properly
 
 ## 🧪 Inventory
-
 ```
 [webserver]
 nodeA
@@ -197,6 +196,27 @@ nodeA
 [otherserver]
 serverb
 ```
+# F - Project: Ansible Role: Delete User If Exists
+
+This Ansible playbook uses a **handler** to check if a user exists on the system, and deletes the user along with their home directory if they do.
+
+## 📌 Features
+
+- Check if a user exists using Ansible facts.
+- Use a handler to delete the user and their home directory.
+- Clean and modular role structure.
+- Simple to integrate with other playbooks.
+
+## 📁 Project Structure
+
+├── handlers/
+│ └── main.yml # Handler that deletes the user
+├── tasks/
+│ └── main.yml # Main tasks to check user and notify handler
+├── vars/
+│ └── main.yml # Variables (username)
+├── delete_user.yml # Playbook to run the role
+
 
 
 
