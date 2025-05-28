@@ -1,0 +1,14 @@
+- name: Check if the user exists
+  shell : id {{target_user}}
+  register: user_check # Register the output of the command: id {{target_user}}
+  ignore_errors: yes
+
+- name: Show user_check result
+  debug:
+    var: user_check
+
+
+- name: Notify handler if user exists
+  command: /bin/true
+  when: user_check.rc == 0
+  notify: delete user

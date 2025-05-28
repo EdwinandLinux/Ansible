@@ -1,0 +1,5 @@
+- name: delete user
+  user:
+    name: "{{ target_user }}"
+    state: absent
+    remove: yes
