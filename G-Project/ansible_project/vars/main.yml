@@ -1,0 +1,2 @@
+homepage_title: "Welcome tp My Apache Server."
+homepage_body: "This page was deployed using Ansible and Jinja2 templates."

@@ -1,0 +1,4 @@
+# Defaults  values
+apache_package: httpd
+apache_service: httpd
+web_root: /var/www/html

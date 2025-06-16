@@ -1,0 +1,26 @@
+- name: Check if Apache is already installed
+  shell: rpm -q {{apache_package}}
+  register: apache_installed
+  ignore_errors: true
+  changed_when: false
+
+
+- name: Install Apache if not already installed
+  package:
+    name: "{{ apache_package}}"
+    state: present
+  when: apache_installed.rc !=0
+
+- name: Deploy custom index.html
+  template:
+    src: index.html.j2
+    dest: "{{ web_root}}/index.html"
+    owner: apache
+    group: apache
+    mode: '0644'
+
+- name: Ensure Apache is started and enabled
+  service:
+    name: "{{apache_service}}"
+    state: started
+    enabled: true
