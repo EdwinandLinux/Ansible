@@ -218,4 +218,47 @@ This Ansible playbook uses a **handler** to check if a user exists on the system
 │   └── main.yml          # Variables (username)
 ├── delete_user.yml       # Playbook to run the role
 ```
+# G - Project: Apache Web Server Ansible Role Project
 
+This project uses **Ansible** to install and configure the Apache web server on a Linux machine. It includes a structured **Ansible role**, variables, and a **Jinja2 template** for a custom `index.html` homepage.
+
+---
+
+## 📁 Project Structure
+```
+ansible-project/
+├── inventory
+├── playbook.yml
+├── roles/
+│ └── apache/
+│ ├── defaults/
+│ │ └── main.yml
+│ ├── handlers/
+│ │ └── main.yml
+│ ├── tasks/
+│ │ └── main.yml
+│ ├── templates/
+│ │ └── index.html.j2
+│ └── vars/
+│   └── main.yml
+```
+
+---
+
+## 🧾 Features
+
+- Installs Apache (`httpd`)
+- Skips installation if already installed
+- Starts and enables the Apache service
+- Deploys a custom homepage using a Jinja2 template
+- Clean role-based Ansible structure
+
+---
+
+
+## 🚀 How to Use
+
+```bash
+cd ansible-apache-role
+ansible-playbook -i inventory.ini playbook.yml
+```
